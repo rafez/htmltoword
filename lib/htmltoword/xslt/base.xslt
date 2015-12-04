@@ -217,6 +217,23 @@
     <xsl:apply-templates />
   </xsl:template>
 
+  <xsl:template match="div[contains(concat(' ', @class, ' '), ' -warp-data ')]">
+	<w:rPr>
+		<w:sz w:val="10"/><w:szCs w:val="10"/>
+	</w:rPr>
+	<w:p>
+		<w:pPr>
+			<w:sectPr w:orient="landscape"/>
+		</w:pPr>
+	</w:p>
+	<xsl:apply-templates />
+	<w:rPr><w:sz w:val="16"/><w:szCs w:val="16"/></w:rPr>
+	<w:sectPr>
+		<w:pgSz w:w="15840" w:h="12240" w:orient="landscape"/>
+		<w:pgMar w:header="72" w:bottom="144" w:top="144" w:right="288" w:left="288" w:footer="72" w:gutter="72"/>
+	</w:sectPr>
+    </xsl:template>
+
   <xsl:template match="details" />
 
   <xsl:template match="text()">
